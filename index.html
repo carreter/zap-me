@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zap Me!</title>
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form hx-post="/sendstimulus" hx-swap="none">
+        <div>
+            <label for="code">Zap code:</label>
+            <input type="text" name="authCode" id="code" required />
+        </div>
+
+        <div>
+            <label for="value">Stimulus value:</label>
+            <input type="range" min="1" max="100" step="5" name="stimulus.value" id="value" required />
+        </div>
+
+        <div>
+            <input type="radio" id="zap" name="stimulus.type" value="zap">
+            <label for="zap">Zap</label><br>
+            <input type="radio" id="beep" name="stimulus.type" value="beep">
+            <label for="beep">Beep</label><br>
+            <input type="radio" id="vibe" name="stimulus.type" value="vibe">
+            <label for="vibe">Vibe</label><br>
+        </div>
+
+        <input type="submit" value="Send!" />
+    </form>
+</body>
+</html>
