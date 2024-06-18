@@ -1,4 +1,4 @@
-module zap-me
+module github.com/carreter/zap-me
 
 go 1.22
 
